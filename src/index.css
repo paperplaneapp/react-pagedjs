@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@media print {
+  @page {
+    size: A4;
+    margin: 2cm;
+
+    @bottom-center {
+      font-size: 14pt;
+      content: "This is page " counter(page) " of " counter(pages)
+    }
+  }
+
+  @page:first {
+    margin: 0cm;
+
+    @bottom-center {
+      content: none;
+    }
+  }
+}
+
+.content-page {
+  font-size: 16pt;
+  page-break-before: always;
+}
